@@ -1,4 +1,6 @@
-*.flac
-*.csv
 .DS_Store
-*.asv
+data/encoded
+data/music
+data/loss
+data/synth
+data/images

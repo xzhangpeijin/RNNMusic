@@ -13,6 +13,12 @@ function [] = decode(input, output)
     rho = M(2:end,2:nfft+1);
     theta = M(2:end,nfft+2:end);
     
+    % Wrap angles
+    theta = wrapTo2Pi(theta) - pi;
+    
+    % Decode from psd
+    rho = sqrt(10 .^ (rho - 10));
+    
     % Convert to sfft
     [re, im] = pol2cart(theta, rho);
     s = re + 1j * im;
